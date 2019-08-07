@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  match_id: 1
+  bet_setter_id: 1
+  bet_taker_id: 1
+  money_line_odds: 1
+  wager_amount: 1
+  winner_id: 1
+
+two:
+  match_id: 1
+  bet_setter_id: 1
+  bet_taker_id: 1
+  money_line_odds: 1
+  wager_amount: 1
+  winner_id: 1
