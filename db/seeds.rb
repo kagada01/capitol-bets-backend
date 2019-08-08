@@ -5,8 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require 'byebug'
+require 'rest-client'
+require 'JSON'
 require 'Date'
+
+mlb_key_full = "http://api.sportradar.us/mlb/trial/v6.5/en/games/2019/08/08/schedule.json?api_key=jjrnwurup9jmgn8j9ryqzjj5"
+mlb_key = "jjrnwurup9jmgn8j9ryqzjj5"
+mlb_api = "http://api.sportradar.us/mlb/trial/v6.5/en/games/2019/08/08/schedule.json?api_key=#{mlb_key}"
+mlb_api_response = RestClient.get(mlb_api)
+mlb_api_parsed = JSON.parse(mlb_api_response)
+
+def mlb_games(mlb_api_parsed)
+byebug
+venue_name = mlb_api_parsed["games"].map {|game| game["venue"]["name"]}
+end
+
 
 User.destroy_all
 Bet.destroy_all
