@@ -17,13 +17,12 @@ mlb_api_response = RestClient.get(mlb_api)
 mlb_api_parsed = JSON.parse(mlb_api_response)
 
 def mlb_games(mlb_api_parsed, get_game_time_est)
-
-venue_name = mlb_api_parsed["games"].map {|game| game["venue"]["name"]}
-game_city = mlb_api_parsed["games"].map {|game| game["venue"]["city"]}
-home_team = mlb_api_parsed["games"].map {|game| game["home"]["name"]}
-away_team = mlb_api_parsed["games"].map {|game| game["away"]["name"]}
-game_date = mlb_api_parsed["date"]
-game_time_est =  get_game_time_est()
+    venue_name = mlb_api_parsed["games"].map {|game| game["venue"]["name"]}
+    game_city = mlb_api_parsed["games"].map {|game| game["venue"]["city"]}
+    home_team = mlb_api_parsed["games"].map {|game| game["home"]["name"]}
+    away_team = mlb_api_parsed["games"].map {|game| game["away"]["name"]}
+    game_date = mlb_api_parsed["date"]
+    game_time_est =  get_game_time_est()
 end
 
 def get_game_time_est(mlb_api_parsed)
