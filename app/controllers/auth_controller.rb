@@ -1,8 +1,8 @@
 require "byebug"
 
-class AuthController < ApplicationContoller
+class AuthController < ApplicationController
 
-    def create #POST /login
+    def create #POST /login   
        
         @user = User.find_by(username: params[:username])
         if @user && @user.authenticate(params[:password])
@@ -10,6 +10,7 @@ class AuthController < ApplicationContoller
             #send back user data and a token
             payload = {"user_id": @user.id}
             token = encode(payload)
+         
             render json: {
                 user: @user,
                 token: token,

@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module CapitolBetsBackend
   class Application < Rails::Application
+    config.api_only = true
+  
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
@@ -16,7 +18,7 @@ module CapitolBetsBackend
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    config.api_only = true
+  
   end
 end
 
