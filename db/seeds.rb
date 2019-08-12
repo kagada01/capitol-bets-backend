@@ -22,17 +22,17 @@ def mlb_games(mlb_api_parsed, get_game_time_est)
     home_team = mlb_api_parsed["games"].map {|game| game["home"]["name"]}
     away_team = mlb_api_parsed["games"].map {|game| game["away"]["name"]}
     game_date = mlb_api_parsed["date"]
-    game_time_est =  get_game_time_est()
+#     game_time_est =  get_game_time_est()
 end
 
-def get_game_time_est(mlb_api_parsed)
-    mlb_api_parsed["games"].map |game| do 
-        game_time = game["scheduled"]
-        date_array = game_time.split("T")
-        time_array = date_array[1].split("+")
-        official_time = time_array[0]
-        official_time
-end
+# def get_game_time_est(mlb_api_parsed)
+#     mlb_api_parsed["games"].map |game| do 
+#         game_time = game["scheduled"]
+#         date_array = game_time.split("T")
+#         time_array = date_array[1].split("+")
+#         official_time = time_array[0]
+#         official_time
+# end
 
 
 User.destroy_all
