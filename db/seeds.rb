@@ -16,14 +16,17 @@ mlb_api = "http://api.sportradar.us/mlb/trial/v6.5/en/games/2019/08/08/schedule.
 mlb_api_response = RestClient.get(mlb_api)
 mlb_api_parsed = JSON.parse(mlb_api_response)
 
-def mlb_games(mlb_api_parsed, get_game_time_est)
+def mlb_games(mlb_api_parsed)
     venue_name = mlb_api_parsed["games"].map {|game| game["venue"]["name"]}
     game_city = mlb_api_parsed["games"].map {|game| game["venue"]["city"]}
     home_team = mlb_api_parsed["games"].map {|game| game["home"]["name"]}
     away_team = mlb_api_parsed["games"].map {|game| game["away"]["name"]}
     game_date = mlb_api_parsed["date"]
-#     game_time_est =  get_game_time_est()
+    game_time_est =  Time.now
+    new_game = Game.create!(game_date: game_date , game_location: game_city, game_venue: venue_name, game_winner: home_team, game_team1: home_team, game_team2: away_team, sport_event_status_live: false, sport_event_status_ended: false)
 end
+
+mlb_games(mlb_api_parsed)
 
 # def get_game_time_est(mlb_api_parsed)
 #     mlb_api_parsed["games"].map |game| do 
