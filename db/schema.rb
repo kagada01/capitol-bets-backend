@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_174040) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.date "game_date"
+    t.string "game_date"
     t.string "game_location"
     t.string "game_venue"
     t.string "game_winner"

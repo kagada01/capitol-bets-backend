@@ -1,4 +1,4 @@
-require "byebug"
+
 
 class GamesController < ApplicationController
   
