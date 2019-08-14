@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create]
   get '/users', to: 'users#index'
+
+  resources :games, only: [:index]
+  get '/games', to: 'games#index'
  
   # get '/home', to: 'users#show'
 
