@@ -15,12 +15,12 @@ Game.destroy_all
 User.destroy_all
 Bet.destroy_all
 
-todays_date = `#{Date.today.to_s.gsub("-", "/")}`
-mlb_key_full = `http://api.sportradar.us/mlb/trial/v6.5/en/games/#{todays_date}/schedule.json?api_key=jjrnwurup9jmgn8j9ryqzjj5`
-mlb_key = "jjrnwurup9jmgn8j9ryqzjj5"
-mlb_api = `http://api.sportradar.us/mlb/trial/v6.5/en/games/#{todays_date}/schedule.json?api_key=#{mlb_key}`
-mlb_api_response = RestClient.get(mlb_api)
-mlb_api_parsed = JSON.parse(mlb_api_response)
+# todays_date = `#{Date.today.to_s.gsub("-", "/")}`
+# mlb_key_full = `http://api.sportradar.us/mlb/trial/v6.5/en/games/#{todays_date}/schedule.json?api_key=jjrnwurup9jmgn8j9ryqzjj5`
+# mlb_key = "jjrnwurup9jmgn8j9ryqzjj5"
+# mlb_api = `http://api.sportradar.us/mlb/trial/v6.5/en/games/#{todays_date}/schedule.json?api_key=#{mlb_key}`
+# mlb_api_response = RestClient.get(mlb_api)
+# mlb_api_parsed = JSON.parse(mlb_api_response)
 
 game1 = Game.create(game_date: Date.new(2019,8,6), game_location: "Washington, D.C.", game_venue: "Nationals Park", game_winner: "Washington Nationals", game_team1: "Washington Nationals", game_team2: "San Francisco Giants", sport_event_status_live: false, sport_event_status_ended: true)
 
@@ -28,26 +28,26 @@ game2 = Game.create(game_date: Date.new(2019,8,6), game_location: "Boston, MA", 
 
 game3 = Game.create(game_date: Date.new(2019,8,13), game_location: "Boston, MA", game_venue: "Fenway Park", game_winner: "Kansas City Royals", game_team1: "Boston Red Sox", game_team2: "Kansas City Royals", sport_event_status_live: true, sport_event_status_ended: false)
 
-def mlb_games(mlb_api_parsed)
-        mlb_api_parsed["games"].map do |game| 
+# def mlb_games(mlb_api_parsed)
+#         mlb_api_parsed["games"].map do |game| 
             
-            venue_name = game["venue"]["name"]
-            game_location = game["venue"]["city"]
-            home_team = game["home"]["name"]
-            away_team = game["away"]["name"]
-            game_date = mlb_api_parsed["date"]
-            # byebug
-            Game.create!(game_date: game_date,
-                 game_location: game_location, 
-                 game_venue: venue_name, 
-                 game_winner: "", 
-                 game_team1: home_team, 
-                 game_team2: away_team, 
-                 sport_event_status_live: false,
-                 sport_event_status_ended: true)
+#             venue_name = game["venue"]["name"]
+#             game_location = game["venue"]["city"]
+#             home_team = game["home"]["name"]
+#             away_team = game["away"]["name"]
+#             game_date = mlb_api_parsed["date"]
+#             # byebug
+#             Game.create!(game_date: game_date,
+#                  game_location: game_location, 
+#                  game_venue: venue_name, 
+#                  game_winner: "", 
+#                  game_team1: home_team, 
+#                  game_team2: away_team, 
+#                  sport_event_status_live: false,
+#                  sport_event_status_ended: true)
   
-        end
-end
+#         end
+# end
 
 # mlb_games(mlb_api_parsed)
 
