@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2019_08_07_174040) do
 
   create_table "bets", force: :cascade do |t|
-    t.integer "match_id"
-    t.integer "bet_setter_id"
+    t.integer "game_id"
+    t.integer "user_id"
     t.integer "bet_taker_id"
     t.integer "money_line_odds"
     t.integer "wager_amount"

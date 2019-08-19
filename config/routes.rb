@@ -5,15 +5,11 @@ Rails.application.routes.draw do
   post '/login', to: 'auth#create' #needs username and password
   get '/home', to: 'users#show' #take in the token
 
-  resources :users, only: [:create]
-  get '/users', to: 'users#index'
-
+  resources :users, only: [:index, :create]
+  
   resources :games, only: [:index]
-  get '/games', to: 'games#index'
  
-  resources :bets, only: [:index]
-  get '/bets', to: 'bets#index'
-
-  # get '/home', to: 'users#show'
+  resources :bets, only: [:index, :create]
+ 
 
 end

@@ -68,7 +68,7 @@ user1 = User.create!(username: "kagada01", password: "1234", email: "dankagan7@g
 user2 = User.create!(username: "dankagan", password: "1234", email: "kagada01@gettysburg.edu", cash: 500)
 
 
-bet1 = Bet.create!(match_id: game1.id, bet_setter_id: user1.id, bet_taker_id: user2.id, money_line_odds: 110, wager_amount: 75, winner_id: user1.id)
-bet2 = Bet.create!(match_id: game1.id, bet_setter_id: user2.id, bet_taker_id: user1.id, money_line_odds: 250, wager_amount: 25, winner_id: user2.id)
+bet1 = Bet.create!(game_id: game2.id, user_id: user1.id, bet_taker_id: user2.id, money_line_odds: 110, wager_amount: 75, winner_id: user1.id)
+bet2 = Bet.create!(game_id: game4.id, user_id: user2.id, bet_taker_id: user1.id, money_line_odds: 250, wager_amount: 25, winner_id: user2.id)
 
 # Calling function to populate upcoming game cards
