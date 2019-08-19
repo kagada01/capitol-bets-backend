@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   resources :games, only: [:index]
   get '/games', to: 'games#index'
  
+  resources :bets, only: [:index]
+  get '/bets', to: 'bets#index'
+
   # get '/home', to: 'users#show'
 
 end
