@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_174040) do
     t.integer "game_id"
     t.integer "user_id"
     t.integer "payout"
+    t.string "plus_minus"
     t.integer "bet_taker_id"
     t.integer "money_line_odds"
     t.integer "wager_amount"
