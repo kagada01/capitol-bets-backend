@@ -14,7 +14,7 @@ class BetsController < ApplicationController
       private
 
       def new_bet
-        params.require(:bet).permit(:user_id, :game_id, :bet_taker_id, :money_line_odds, :wager_amount, :winner_id) 
+        params.require(:bet).permit(:user_id, :game_id, :bet_taker_id, :money_line_odds, :wager_amount, :winner_id, :payout) 
       end 
 
 
