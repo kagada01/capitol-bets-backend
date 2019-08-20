@@ -3,6 +3,7 @@ class CreateBets < ActiveRecord::Migration[5.2]
     create_table :bets do |t|
       t.integer :game_id
       t.integer :user_id
+      t.integer :payout
       t.integer :bet_taker_id
       t.integer :money_line_odds
       t.integer :wager_amount
