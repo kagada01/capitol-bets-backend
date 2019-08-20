@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   resources :games, only: [:index]
  
-  resources :bets, only: [:index, :create]
+  resources :bets, only: [:index, :create, :update, :show]
  
 
 end

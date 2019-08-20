@@ -1,3 +1,5 @@
+require 'byebug'
+
 class BetsController < ApplicationController
 
     def index
@@ -9,6 +11,21 @@ class BetsController < ApplicationController
     
       def create
         render json: Bet.create(new_bet)
+      end
+
+      def update
+        # byebug
+        bet = Bet.find(params[:id])
+        render json: bet.update(new_bet)
+      end
+
+      def show
+        bet = Bet.find(params[:id])
+        
+        render json: bet.to_json(:include => {
+            :game => {:only => [:id, :game_date, :game_team1, :game_team2, :suggested_odds, :game_venue]}
+                },  :except => [:created_at, :updated_at ])
+
       end
 
       private
