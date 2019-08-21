@@ -10,18 +10,23 @@ class BetsController < ApplicationController
       end
     
       def create
-        render json: Bet.create(new_bet)
+        @bet = Bet.create(new_bet)
+        render json: @bet.to_json(:include => {
+          :game => {:only => [:id, :game_date, :game_team1, :game_team2, :suggested_odds, :game_venue]}
+      },  :except => [:created_at, :updated_at ])
       end
 
       def update
         # byebug
-        bet = Bet.find(params[:id])
-        render json: bet.update(new_bet)
+        @bet = Bet.find(params[:id])
+        @bet.update(new_bet)
+        render json: @bet.to_json(:include => {
+          :game => {:only => [:id, :game_date, :game_team1, :game_team2, :suggested_odds, :game_venue]}
+      },  :except => [:created_at, :updated_at ])
       end
 
       def show
         bet = Bet.find(params[:id])
-        
         render json: bet.to_json(:include => {
             :game => {:only => [:id, :game_date, :game_team1, :game_team2, :suggested_odds, :game_venue]}
                 },  :except => [:created_at, :updated_at ])
