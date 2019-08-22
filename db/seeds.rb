@@ -22,15 +22,23 @@ Bet.destroy_all
 # mlb_api_response = RestClient.get(mlb_api)
 # mlb_api_parsed = JSON.parse(mlb_api_response)
 
-game1 = Game.create(game_date: Date.new(2019,8,6), game_location: "Washington, D.C.", game_venue: "Nationals Park", suggested_odds: "+210", game_winner: "Washington Nationals", game_team1: "Washington Nationals", game_team2: "San Francisco Giants", sport_event_status_live: false, sport_event_status_ended: true)
+game1 = Game.create(game_date: Date.new(2019,8,22), game_location: "St. Louis", game_venue: "Busch Stadium", suggested_odds: "+210", game_winner: "Colorado Rockies", game_team1: "St. Louis Cardinals", game_team2: "Colorado Rockies", sport_event_status_live: false, sport_event_status_ended: true)
 
-game2 = Game.create(game_date: Date.new(2019,8,6), game_location: "Seattle, WA", game_venue: "T-Mobile Park", suggested_odds: "-150",  game_winner: "Seattle Mariners", game_team1: "Seattle Mariners", game_team2: "Texas Rangers", sport_event_status_live: true, sport_event_status_ended: false)
+game2 = Game.create(game_date: Date.new(2019,8,22), game_location: "Pittsburgh, PA", game_venue: "PNC Park", suggested_odds: "-150",  game_winner: "Pittsburgh Pirates", game_team1: "Pittsburgh Pirates", game_team2: "Washington Nationals", sport_event_status_live: true, sport_event_status_ended: false)
 
-game3 = Game.create(game_date: Date.new(2019,8,13), game_location: "Boston, MA", game_venue: "Fenway Park", suggested_odds: "+180",  game_winner: "Kansas City Royals", game_team1: "Boston Red Sox", game_team2: "Kansas City Royals", sport_event_status_live: true, sport_event_status_ended: false)
+game3 = Game.create(game_date: Date.new(2019,8,22), game_location: "Atlanta, GA", game_venue: "SunTrust Park", suggested_odds: "+115",  game_winner: "Atlanta Braves", game_team1: "Atlanta Braves", game_team2: "Miami Marlins", sport_event_status_live: true, sport_event_status_ended: false)
 
-game4 = Game.create(game_date: Date.new(2019,8,18), game_location: "New York City, NY", game_venue: "Yankee Stadium", suggested_odds: "-110",  game_winner: "Toronto Blue Jays", game_team1: "New York Yankees", game_team2: "Toronto Blue Jays", sport_event_status_live: false, sport_event_status_ended: false)
+game4 = Game.create(game_date: Date.new(2019,8,22), game_location: "New York City, NY", game_venue: "Citi Field", suggested_odds: "-210",  game_winner: "Toronto Blue Jays", game_team1: "New York Mets", game_team2: "Cleveland Indians", sport_event_status_live: false, sport_event_status_ended: false)
 
-game5 = Game.create(game_date: Date.new(2019,8,18), game_location: "Baltimore, MD", game_venue: "Camden Yards", suggested_odds: "-110",  game_winner: "Tampa Bay Rays", game_team1: "Baltimore Orioles", game_team2: "Tampa Bay Rays", sport_event_status_live: false, sport_event_status_ended: false)
+game5 = Game.create(game_date: Date.new(2019,8,22), game_location: "Baltimore, MD", game_venue: "Camden Yards", suggested_odds: "-110",  game_winner: "Tampa Bay Rays", game_team1: "Baltimore Orioles", game_team2: "Tampa Bay Rays", sport_event_status_live: false, sport_event_status_ended: false)
+
+game6 = Game.create(game_date: Date.new(2019,8,22), game_location: "Chicago, IL", game_venue: "Guaranteed Rate Field", suggested_odds: "-180",  game_winner: "Chicago White Sox", game_team1: "Chicago White Sox", game_team2: "Texas Rangers", sport_event_status_live: false, sport_event_status_ended: false)
+
+game7 = Game.create(game_date: Date.new(2019,8,22), game_location: "Houston, TX", game_venue: "Minute Maid Park", suggested_odds: "-110",  game_winner: "Houston Astros", game_team1: "Houston Astros", game_team2: "Detroit Tigers", sport_event_status_live: false, sport_event_status_ended: false)
+
+game8 = Game.create(game_date: Date.new(2019,8,22), game_location: "Oakland, CA", game_venue: "Oakland-Alameda County Coliseum", suggested_odds: "-110",  game_winner: "Oakland Athletics", game_team1: "Oakland Athletics", game_team2: "New York Yankees", sport_event_status_live: false, sport_event_status_ended: false)
+
+game9 = Game.create(game_date: Date.new(2019,8,22), game_location: "Los Angeles, CA", game_venue: "Dodger Stadium", suggested_odds: "-140",  game_winner: "Toronto Blue Jays", game_team1: "Los Angeles Dodgers", game_team2: "Toronto Blue Jays", sport_event_status_live: false, sport_event_status_ended: false)
 
 
 # def mlb_games(mlb_api_parsed)
